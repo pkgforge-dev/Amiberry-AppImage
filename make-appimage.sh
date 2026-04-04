@@ -13,7 +13,7 @@ export DESKTOP=/usr/share/applications/Amiberry.desktop
 export DEPLOY_OPENGL=1
 
 # Deploy dependencies
-quick-sharun /usr/bin/amiberry
+quick-sharun /usr/bin/amiberry /usr/lib/libreadline.so* /usr/lib/libmpfr.so* /usr/lib/libgmp.so* /usr/lib/libm.so* /usr/lib/libncursesw.so*
 
 # Additional changes can be done in between here
 
