@@ -41,5 +41,5 @@ mkdir -p ./AppDir/bin/data
 cd ./amiberry
 cmake -S ./ -B build -DCMAKE_BUILD_TYPE=Release
 cmake --build build -j$(nproc)
-mv -v build/amiberry ../AppDir/bin
+mv -v build/amiberry roms whdboot ../AppDir/bin
 mv -v data/abr floppy_soundsdata ../AppDir/bin/data
