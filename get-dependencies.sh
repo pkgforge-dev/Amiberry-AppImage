@@ -7,17 +7,14 @@ ARCH=$(uname -m)
 echo "Installing package dependencies..."
 echo "---------------------------------------------------------------"
 pacman -Syu --noconfirm \
-    cmake      \
-    enet \
-    flac \
+    cmake              \
+    enet               \
     hicolor-icon-theme \
-    libpcap \
-    libserialport \
-    mpg123 \
-    nlohmann-json \
-    portmidi \
-    sdl3_image \
-    sdl3_ttf   \
+    libserialport      \
+    nlohmann-json      \
+    portmidi           \
+    sdl3_image         \
+    sdl3_ttf           \
     tinyxml2
 
 echo "Installing debloated packages..."
