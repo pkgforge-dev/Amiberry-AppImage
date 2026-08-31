@@ -52,5 +52,5 @@ cmake -S ./ -B build -DCMAKE_BUILD_TYPE=Release
 cmake --build build -j$(nproc)
 make capsimg -j$(nproc)
 mv -v capsimg.so ../AppDir/bin
-mv -v build/amiberry roms whdboot ../AppDir/bin
+mv -v build/amiberry roms whdboot build/external/capsimage/libcapsimage.so build/external/floppybridge/libfloppybridge.so  ../AppDir/bin
 mv -v data/abr floppy_soundsdata ../AppDir/bin/data
