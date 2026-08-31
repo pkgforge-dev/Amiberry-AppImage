@@ -10,6 +10,7 @@ pacman -Syu --noconfirm \
     cmake              \
     enet               \
     hicolor-icon-theme \
+    libmpeg2           \
     libserialport      \
     nlohmann-json      \
     portmidi           \
