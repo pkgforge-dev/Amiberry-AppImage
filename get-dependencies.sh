@@ -35,6 +35,7 @@ git clone --recursive --depth 1 "$REPO" ./amiberry
 VERSION="${VERSION#v}"
 echo "$VERSION" > ~/version
 
+mkdir -p ./AppDir/bin/data
 # Always fetch the qemu-uae release matching the architecture
 if [ "$ARCH" = "aarch64" ]; then
     QEMU_URL="https://github.com/BlitterStudio/amiberry-qemu-uae/releases/download/v11.0.1-amiberry.7/qemu-uae-linux-aarch64.tar.xz"
@@ -45,7 +46,6 @@ curl -L -o qemu-uae.tar.xz "$QEMU_URL"
 tar -xJf qemu-uae.tar.xz -C ./AppDir/bin
 rm -f qemu-uae.tar.xz
 
-mkdir -p ./AppDir/bin/data
 cd ./amiberry
 cmake -S ./ -B build -DCMAKE_BUILD_TYPE=Release
 cmake --build build -j$(nproc)
