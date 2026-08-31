@@ -37,6 +37,10 @@ VERSION="$(curl -s https://api.github.com/repos/BlitterStudio/amiberry/releases/
 git clone --recursive --depth 1 "$REPO" ./amiberry
 echo "$VERSION" > ~/version
 
+if [ "$ARCH" = "aarch64" ]; then
+else
+fi
+
 mkdir -p ./AppDir/bin/data
 cd ./amiberry
 cmake -S ./ -B build -DCMAKE_BUILD_TYPE=Release
