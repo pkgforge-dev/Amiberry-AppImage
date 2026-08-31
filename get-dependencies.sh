@@ -14,9 +14,11 @@ pacman -Syu --noconfirm \
     libpcap \
     libserialport \
     mpg123 \
+    nlohmann-json \
     portmidi \
     sdl3_image \
     sdl3_ttf   \
+    tinyxml2
 
 echo "Installing debloated packages..."
 echo "---------------------------------------------------------------"
