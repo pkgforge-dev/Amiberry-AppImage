@@ -12,7 +12,8 @@ export DESKTOP=https://raw.githubusercontent.com/BlitterStudio/amiberry/refs/hea
 export DEPLOY_OPENGL=1
 
 # Deploy dependencies
-quick-sharun ./AppDir/bin/amiberry ./AppDir/bin/capsimg.so ./AppDir/bin/qemu-uae.so
+#quick-sharun ./AppDir/bin/amiberry ./AppDir/bin/capsimg.so ./AppDir/bin/qemu-uae.so ./AppDir/bin/libcapsimage.so ./AppDir/bin/libfloppybridge.so
+quick-sharun ./AppDir/bin/*
 
 # Turn AppDir into AppImage
 quick-sharun --make-appimage
