@@ -35,11 +35,18 @@ echo "---------------------------------------------------------------"
 REPO="https://github.com/BlitterStudio/amiberry"
 VERSION="$(curl -s https://api.github.com/repos/BlitterStudio/amiberry/releases/latest | grep '"tag_name"' | cut -d '"' -f 4)"
 git clone --recursive --depth 1 "$REPO" ./amiberry
+VERSION="${VERSION#v}"
 echo "$VERSION" > ~/version
 
+# Always fetch the qemu-uae release matching the architecture
 if [ "$ARCH" = "aarch64" ]; then
+    QEMU_URL="https://github.com/BlitterStudio/amiberry-qemu-uae/releases/download/v11.0.1-amiberry.7/qemu-uae-linux-aarch64.tar.xz"
 else
+    QEMU_URL="https://github.com/BlitterStudio/amiberry-qemu-uae/releases/download/v11.0.1-amiberry.7/qemu-uae-linux-x86_64.tar.xz"
 fi
+curl -L -o qemu-uae.tar.xz "$QEMU_URL"
+tar -xJf qemu-uae.tar.xz -C ./AppDir/bin
+rm -f qemu-uae.tar.xz
 
 mkdir -p ./AppDir/bin/data
 cd ./amiberry
