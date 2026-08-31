@@ -37,7 +37,9 @@ VERSION="$(curl -s https://api.github.com/repos/BlitterStudio/amiberry/releases/
 git clone --recursive --depth 1 "$REPO" ./amiberry
 echo "$VERSION" > ~/version
 
-mkdir -p ./AppDir/bin
+mkdir -p ./AppDir/bin/data
 cd ./amiberry
 cmake -S ./ -B build -DCMAKE_BUILD_TYPE=Release
 cmake --build build -j$(nproc)
+mv -v build/amiberry ../AppDir/bin
+mv -v data/abr floppy_soundsdata ../AppDir/bin/data
