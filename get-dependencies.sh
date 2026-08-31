@@ -6,7 +6,17 @@ ARCH=$(uname -m)
 
 echo "Installing package dependencies..."
 echo "---------------------------------------------------------------"
-# pacman -Syu --noconfirm PACKAGESHERE
+pacman -Syu --noconfirm \
+    cmake      \
+    enet \
+    flac \
+    hicolor-icon-theme \
+    libpcap \
+    libserialport \
+    mpg123 \
+    portmidi \
+    sdl3_image \
+    sdl3_ttf   \
 
 echo "Installing debloated packages..."
 echo "---------------------------------------------------------------"
