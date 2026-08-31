@@ -3,17 +3,16 @@
 set -eu
 
 ARCH=$(uname -m)
-VERSION=$(pacman -Q amiberry | awk '{print $2; exit}')
-export ARCH VERSION
+export ARCH
 export OUTPATH=./dist
 export ADD_HOOKS="self-updater.hook"
 export UPINFO="gh-releases-zsync|${GITHUB_REPOSITORY%/*}|${GITHUB_REPOSITORY#*/}|latest|*$ARCH.AppImage.zsync"
-export ICON=/usr/share/icons/hicolor/256x256/apps/amiberry.png
-export DESKTOP=/usr/share/applications/Amiberry.desktop
+export ICON=https://raw.githubusercontent.com/BlitterStudio/amiberry/refs/heads/master/packaging/linux/icons/256x256/amiberry.png
+export DESKTOP=https://raw.githubusercontent.com/BlitterStudio/amiberry/refs/heads/master/packaging/linux/Amiberry.desktop
 export DEPLOY_OPENGL=1
 
 # Deploy dependencies
-quick-sharun /usr/bin/amiberry
+quick-sharun ./AppDir/bin/amiberry ./AppDir/bin/capsimg.so
 
 # Turn AppDir into AppImage
 quick-sharun --make-appimage
