@@ -43,7 +43,7 @@ rm -f qemu-uae.tar.xz
 
 cd ./amiberry
 git checkout "$VERSION"
-cmake -S ./ -B build -DCMAKE_BUILD_TYPE=Release
+cmake ./ -B build -DCMAKE_BUILD_TYPE=Release
 cmake --build build -j$(nproc)
 mv -v build/amiberry roms whdboot build/external/capsimage/libcapsimage.so build/external/floppybridge/libfloppybridge.so  ../AppDir/bin
 mv -v data/abr data/floppy_sounds ../AppDir/bin/data
